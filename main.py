@@ -2,8 +2,6 @@ from flask import Flask, request
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-
-
 form = """
 <!DOCTYPE html>
 <html>
@@ -25,13 +23,13 @@ form = """
         <label>
          Signup:<br> 
             Username:  
-            <input type="text" name="username" required/><br>
+            <input type="text" name="username" minlength="3" maxlength="20" required/><br>
             Password:
-            <input type="password" name="password" required/><br>
+            <input type="password" name="password" minlength="3" maxlength="20" required/><br>
             Verify Password:
-            <input type="password" name="verify" required/><br>
+            <input type="password" name="verify" minlength="3" maxlength="20" required/><br>
             Email (optional)  
-            <input type="text" name="email (optional)"/><br>
+            <input type="text" name="email (optional)" minlength="3" maxlength="20"/><br>
         
             
         </label>
@@ -52,7 +50,7 @@ def psw_verify():
     username = request.form['username']
     for password in password:
         if orig_password == verify_password:
-            return ("Hello, " + username)
+            return ("Welcome, " + username + "!")
         else:
             return "Passwords must match!" 
   
