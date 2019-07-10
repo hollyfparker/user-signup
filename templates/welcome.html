@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        {% for password in password %}
+            {% if orig_password == verify_password %}
+                <p>Welcome, {{username}} </p>
+            {% else %}
+                <p>Passwords must match!</p>
+            {% endif %}
+            {% endfor %}
+        
+       
+    </body>
+</html>

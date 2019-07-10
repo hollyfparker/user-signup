@@ -8,15 +8,13 @@ def index():
     return render_template('index.html')
     
     @app.route("/", methods=['POST'])
-def psw_verify():
-    password = request.form['password']
-    orig_password = request.form['password']
-    verify_password = request.form['verify']
-    username = request.form['username']
-    for password in password:
-        if orig_password == verify_password:
-            return ("Welcome, " + username + "!")
-        else:
-            return "Passwords must match!" 
+
+    def psw_verify():
+        password = request.form['password']
+        orig_password = request.form['password']
+        verify_password = request.form['verify']
+        username = request.form['username']
+    
+        return render_template('welcome.html')
   
 app.run()
