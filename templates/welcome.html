@@ -1,7 +1,7 @@
 {% extends "index.html" %}
         
         {% for password in password %}
-            {% if orig_password == verify_password %}
+            {% if orig_password=verify_password %}
                 <p>Welcome, {{username}} </p>
             {% else %}
                 <p>Passwords must match!</p>

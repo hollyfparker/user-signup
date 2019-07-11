@@ -10,11 +10,6 @@ def index():
 @app.route("/")
 
 def psw_verify():
-    password = request.form['password']
-    orig_password = request.form['password']
-    verify_password = request.form['verify']
-    username = request.form['username']
-    
-    return render_template('welcome.html', name='username')
+    return render_template('welcome.html')
   
 app.run()
