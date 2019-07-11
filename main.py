@@ -7,14 +7,14 @@ app.config['DEBUG'] = True
 def index():
     return render_template('index.html')
     
-    @app.route("/", methods=['POST'])
+@app.route("/")
 
-    def psw_verify():
-        password = request.form['password']
-        orig_password = request.form['password']
-        verify_password = request.form['verify']
-        username = request.form['username']
+def psw_verify():
+    password = request.form['password']
+    orig_password = request.form['password']
+    verify_password = request.form['verify']
+    username = request.form['username']
     
-        return render_template('welcome.html')
+    return render_template('welcome.html', name='username')
   
 app.run()
