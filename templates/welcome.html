@@ -1,10 +1,17 @@
 {% extends "base.html" %}
-        
-        {% for password in password %}
-            {% if orig_password=verify_password %}
-                <p>Welcome, {{username}} </p>
-            {% else %}
-                <p>Passwords must match!</p>
-            {% endif %}
-            {% endfor %}
+{% block content %}  
+<p>
+    Welcome, {{username}}
+</p>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
             
